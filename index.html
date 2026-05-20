@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="좋아하는 가수의 유튜브 무대와 공연 영상을 모아보는 개인 웹 아카이브" />
+  <title>김용빈 무대 아카이브</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <nav class="topbar" aria-label="상단 메뉴">
+        <a class="brand" href="#">
+          <span class="brand-mark">♪</span>
+          <span>Stage Archive</span>
+        </a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="테마 전환">
+          <span class="theme-icon">🌙</span>
+          <span class="theme-label">Mood</span>
+        </button>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">For Serenade’s Favorite Stages</p>
+          <h1>좋아하는 무대를<br />한 곳에서 아름답게 모아보기</h1>
+          <p class="hero-description">
+            김용빈 가수님의 미스터 트롯3, 사랑의 콜센타, 금타는 금요일, 무대/공연 영상을
+            카테고리별로 정리하고 검색할 수 있는 개인 유튜브 아카이브입니다.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#videoSection">영상 둘러보기</a>
+            <button class="ghost-button" id="randomButton" type="button">랜덤 무대 보기</button>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="아카이브 요약">
+          <div class="hero-card-glow"></div>
+          <p class="card-label">Archive Status</p>
+          <strong id="totalCount">0</strong>
+          <span>개의 영상이 정리되어 있어요</span>
+          <div class="mini-stats">
+            <div>
+              <b id="categoryCount">4</b>
+              <small>Categories</small>
+            </div>
+            <div>
+              <b>YouTube</b>
+              <small>Linked</small>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="category-section" aria-labelledby="categoryTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Categories</p>
+          <h2 id="categoryTitle">보고 싶은 카테고리를 선택하세요</h2>
+        </div>
+        <div class="category-grid" id="categoryGrid" role="tablist" aria-label="영상 카테고리"></div>
+      </section>
+
+      <section class="video-section" id="videoSection" aria-labelledby="videoTitle">
+        <div class="video-toolbar">
+          <div>
+            <p class="eyebrow">Now Showing</p>
+            <h2 id="videoTitle">전체 영상</h2>
+            <p class="result-text" id="resultText">영상을 불러오는 중입니다.</p>
+          </div>
+
+          <div class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="영상 제목으로 검색"
+              autocomplete="off"
+              aria-label="영상 제목 검색"
+            />
+          </div>
+        </div>
+
+        <div class="video-grid" id="videoGrid" aria-live="polite"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="empty-icon">🔎</div>
+          <h3>검색 결과가 없어요</h3>
+          <p>다른 검색어를 입력하거나 다른 카테고리를 선택해보세요.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+    <p>
+      본 사이트는 비영리 개인 아카이브이며, 어떠한 수익도 창출하지 않습니다.<br>
+      모든 영상의 저작권은 원저작자 및 유튜브에 있으며, 본 사이트는 영상 파일을 직접 제공하지 않고
+      유튜브 링크로만 연결합니다.
+    </p>
+    <p class="footer-credit">제작: 세레나데 · 최근 갱신일: 26.05.20</p>
+  </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
